@@ -111,6 +111,7 @@
 		"html-webpack-pug-plugin": "^0.3.0",
 		"jquery": "^3.0.0",
 		"jquery-lazy": "^1.7.7",
+		"jquery-mask-plugin": "^1.14.15",
 		"jquery-validation": "^1.17.0",
 		"magnific-popup": "^1.1.0",
 		"path": "^0.12.7",

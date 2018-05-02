@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import validate from 'jquery-validation';
+import mask from 'jquery-mask-plugin';
 
 export default function formValidate() {
 	const validateErrorPlacement = function(error, element) {
@@ -30,6 +31,8 @@ export default function formValidate() {
 		});
 	};
 
+	$("input[type='tel']").mask("+380(00) 000-00-00", {placeholder: "+380(__) ___-__-__"});
+
 	const validatePhone = {
 		required: true,
 		normalizer: function(value) {
@@ -57,31 +60,44 @@ export default function formValidate() {
 		unhighlight: validateUnhighlight,
 		submitHandler: validateSubmitHandler,
 		rules: {
-			last_name: "required",
-			first_name: "required",
-			email: {
-				required: true,
-				email: true
-			},
-			password: {
-				required: true,
-				minlength: 6,
-			}
+			name: "required",
+			surname: "required",
+			patronymic: "required",
+			region: "required",
+			area: "required",
+			locality: "required",
+			street: "required",
+			house_number: "required",
+			appt_number: "required",
+			postcode: "required",
+			phone: validatePhone
+			// password: {
+			// 	required: true,
+			// 	minlength: 6,
+			// }
 			// phone: validatePhone
 		},
 		messages: {
-			last_name: "Fill this field",
-			first_name: "Fill this field",
+			name: "Поле не может быть пустым",
+			surname: "Поле не может быть пустым",
+			patronymic: "Поле не может быть пустым",
+			area: "Поле не может быть пустым",
+			region: "Поле не может быть пустым",
+			locality: "Поле не может быть пустым",
+			street: "Поле не может быть пустым",
+			house_number: "Поле не может быть пустым",
+			appt_number: "Поле не может быть пустым",
+			postcode: "Поле не может быть пустым",
 			email: {
-				required: "Fill this field",
+				required: "Поле не может быть пустым",
 				email: "Email contains wrong format"
 			},
 			password: {
-				required: "Fill this field",
+				required: "Поле не может быть пустым",
 				email: "Password should be at leasts 6 characters"
 			},
 			phone: {
-			    required: "Fill this field",
+			    required: "Поле не может быть пустым",
 			    minlength: "Type a valid phone"
 			}
 		}
