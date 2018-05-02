@@ -25,7 +25,7 @@ html(lang="en")
 				include ../components/_header
 
 			// what should be changed with every pjax
-			.page
+			.page(class="" + htmlWebpackPlugin.options.data.pages[page].name)
 				.page__content#fullpage
 					block content
 

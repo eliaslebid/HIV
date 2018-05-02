@@ -46,7 +46,7 @@ const scrollbarwidth = getScrollbarWidth();
 	}, false);
 });
 
-let mode = 'wide';
+let mode = 'mobile';
 
 [].forEach.call(navs, function (nav) {
 	nav.addEventListener('click', function (event) {

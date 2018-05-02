@@ -1,28 +1,28 @@
-const _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) {
+var _typeof = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? function (obj) {
 	return typeof obj;
 } : function (obj) {
 	return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj;
 };
 
 function isObject(value) {
-	const type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-	return value !== null && (type === 'object' || type === 'function');
+	var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
+	return value != null && (type == 'object' || type == 'function');
 }
 
 function debounce(func, wait, options) {
-	let lastArgs = void 0,
+	var lastArgs = void 0,
 		lastThis = void 0,
 		maxWait = void 0,
 		result = void 0,
 		timerId = void 0,
 		lastCallTime = void 0;
 
-	let lastInvokeTime = 0;
-	let leading = false;
-	let maxing = false;
-	let trailing = true;
+	var lastInvokeTime = 0;
+	var leading = false;
+	var maxing = false;
+	var trailing = true;
 
-	if (typeof func !== 'function') {
+	if (typeof func != 'function') {
 		throw new TypeError('Expected a function');
 	}
 	wait = +wait || 0;
@@ -34,8 +34,8 @@ function debounce(func, wait, options) {
 	}
 
 	function invokeFunc(time) {
-		let args = lastArgs;
-		let thisArg = lastThis;
+		var args = lastArgs;
+		var thisArg = lastThis;
 
 		lastArgs = lastThis = undefined;
 		lastInvokeTime = time;
@@ -53,16 +53,16 @@ function debounce(func, wait, options) {
 	}
 
 	function remainingWait(time) {
-		const timeSinceLastCall = time - lastCallTime;
-		const timeSinceLastInvoke = time - lastInvokeTime;
-		const timeWaiting = wait - timeSinceLastCall;
+		var timeSinceLastCall = time - lastCallTime;
+		var timeSinceLastInvoke = time - lastInvokeTime;
+		var timeWaiting = wait - timeSinceLastCall;
 
 		return maxing ? Math.min(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
 	}
 
 	function shouldInvoke(time) {
-		const timeSinceLastCall = time - lastCallTime;
-		const timeSinceLastInvoke = time - lastInvokeTime;
+		var timeSinceLastCall = time - lastCallTime;
+		var timeSinceLastInvoke = time - lastInvokeTime;
 
 		// Either this is the first call, activity has stopped and we're at the
 		// trailing edge, the system time has gone backwards and we're treating
@@ -71,7 +71,7 @@ function debounce(func, wait, options) {
 	}
 
 	function timerExpired() {
-		const time = Date.now();
+		var time = Date.now();
 		if (shouldInvoke(time)) {
 			return trailingEdge(time);
 		}
@@ -108,10 +108,10 @@ function debounce(func, wait, options) {
 	}
 
 	function debounced() {
-		const time = Date.now();
-		const isInvoking = shouldInvoke(time);
+		var time = Date.now();
+		var isInvoking = shouldInvoke(time);
 
-		for (let _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 			args[_key] = arguments[_key];
 		}
 
@@ -142,10 +142,10 @@ function debounce(func, wait, options) {
 }
 
 export function throttle(func, wait, options) {
-	let leading = true;
-	let trailing = true;
+	var leading = true;
+	var trailing = true;
 
-	if (typeof func !== 'function') {
+	if (typeof func != 'function') {
 		throw new TypeError('Expected a function');
 	}
 	if (isObject(options)) {

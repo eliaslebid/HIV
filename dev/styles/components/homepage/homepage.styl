@@ -1,0 +1,77 @@
+.homepage {
+	padding-top: 15px;
+
+	.accordion {
+		margin-top 81px;
+
+		&__title {
+			position relative;
+			color: #383838;
+			font-size: 24px;
+			font-weight 700;
+			letter-spacing: 0;
+			line-height: 41px;
+			cursor pointer;
+
+			&::after {
+				content: '';
+				position absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 2px;
+				background-color: #EFF2F7;
+			}
+		}
+
+		&__item {
+			&:not(:first-child) {
+				margin-top 25px;
+			}
+		}
+
+		&__panel {
+			display: none;
+			overflow hidden;
+			margin-top 28px;
+		}
+
+		&__paragraph {
+			font-size: 16px;
+			letter-spacing: 0;
+			line-height: 26px;
+
+			&--highlight {
+				color: #D6333C;
+			}
+		}
+	}
+
+	.package {
+		margin-top 45px;
+		background url(/img/package-arms.png);
+		background-repeat no-repeat;
+		background-position: right top 65px;
+		background-size auto;
+
+		&__title {
+			font-size: 24px;
+			font-weight 700;
+			color: #383838;
+			letter-spacing: 0;
+			line-height: 41px;
+			margin-bottom 243px;
+		}
+
+		&__description {
+			font-size: 16px;
+			color: #383838;
+			letter-spacing: 0;
+			line-height: 26px;
+		}
+	}
+
+	&__cta {
+		send-button()
+	}
+}

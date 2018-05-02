@@ -5,27 +5,20 @@
 	"analyticsCode": "UA-XXXXX-X",
 	"pages": {
 		"home": {
+			"name": "homepage",
 			"title": "Homepage",
 			"description": "test",
 			"keywords": "test"
 		},
-		"not-found": {
+		"send-form": {
+			"name": "form",
 			"title": "Not found",
 			"description": "test",
 			"keywords": "test"
 		},
-		"catalog": {
-			"title": "Catalog",
-			"description": "test",
-			"keywords": "test"
-		},
-		"listpages": {
-			"title": "Listpages",
-			"description": "test",
-			"keywords": "test"
-		},
-		"index": {
-			"title": "Index",
+		"not-found": {
+			"name": "homepage",
+			"title": "Not found",
 			"description": "test",
 			"keywords": "test"
 		}
