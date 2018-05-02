@@ -1,0 +1,74 @@
+// Styles for dialog window
+.mfp-wrap
+  -webkit-overflow-scrolling: touch
+  -webkit-transform: translateZ(0)
+html.mfp-helper
+  height: 100%
+  body
+    overflow: hidden
+    height: 100%
+    -webkit-transform: translateZ(0)
+.mfp-c-container {
+	padding-left: 96px
+	padding-right: 96px
+		+r(tablet) {
+			padding-left: 16px
+			padding-right: 16px
+		}
+}
+
+.mfp-content
+  r($tablet)
+.modal
+  padding: 35px 25px
+  max-width: 980px
+  margin: 40px auto
+  position: relative
+#small-dialog
+  background: white
+  padding: 20px 30px
+  text-align: left
+  max-width: 600px
+  margin: 40px auto
+  position: relative
+// Fade-zoom animation for first dialog
+.popup-buble
+  .popup-dialog, .mfp-content
+    opacity: 0
+    transition: all 0.2s ease-in-out
+    transform: scale(0.8) translate3d(0, 50%, 0)
+  &.mfp-ready
+    .popup-dialog, .mfp-content
+      opacity: 1
+      transform: scale(1)
+  &.mfp-removing
+    .popup-dialog, .mfp-content
+      transform: scale(0.8) translate3d(0, -50%, 0)
+      opacity: 0
+  &.mfp-bg
+    background: rgba(#231F20, 0.85)
+    opacity: 0
+    transition: opacity 0.3s $ease
+  &.mfp-ready.mfp-bg
+    opacity: 1
+  &.mfp-removing.mfp-bg
+    opacity: 0
+// Fade-move animation
+.my-mfp-slide-bottom
+  .zoom-anim-dialog
+    opacity: 0
+    transition: all 0.2s ease-out
+    transform: translateY(-20px) perspective(600px) rotateX(10deg)
+  &.mfp-ready .zoom-anim-dialog
+    opacity: 1
+    transform: translateY(0) perspective(600px) rotateX(0)
+  &.mfp-removing .zoom-anim-dialog
+    opacity: 0
+    transform: translateY(-10px) perspective(600px) rotateX(10deg)
+  &.mfp-bg
+    opacity: 0
+    transition: opacity 0.3s ease-out
+  &.mfp-ready.mfp-bg
+    opacity: 0.8
+  &.mfp-removing.mfp-bg
+    opacity: 0

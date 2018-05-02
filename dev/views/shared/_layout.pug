@@ -1,0 +1,36 @@
+include _mixins
+
+
+block vars
+	- var page
+
+doctype html
+html(lang="en")
+	head
+		title #{htmlWebpackPlugin.options.data.pages[page].title}
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+		block metatags
+			include _metatags
+
+		block styles
+			include _styles
+
+	body
+		// place where pjax bindings happen's
+		#barba-wrapper
+			block header
+				include ../components/_header
+
+			// what should be changed with every pjax
+			.page
+				.page__content#fullpage
+					block content
+
+				block footer
+					include ../components/_footer
+
+			block scripts
+				include _scripts

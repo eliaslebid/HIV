@@ -1,0 +1,420 @@
+.header {
+	position: absolute
+	top: 25px
+	left: 0
+	right: 0
+	height: 140px
+	z-index: 101
+	display: flex
+
+	&.is-fixed {
+		display: flex
+		align-items: center
+		padding: 50px 0
+		height: 80px
+		background: rgb(17, 17, 17)
+		top: 0
+		transform: translate3d(0, -100%, 0)
+		transition: 0.15s ease-in-out
+	}
+
+	&.is-fixed-visible {
+		position: fixed
+		transform: translate3d(0, 0, 0)
+	}
+
+	&.is-scrolling-top {
+		top: -75px
+	}
+
+	&__logo {
+		display: inline-flex
+		height: 78px
+		width: 66px
+		transition: all .3s
+		&--fade {
+			opacity: 0
+			visibility: hidden
+		}
+	}
+
+	&__wrapper {
+		display: flex
+		align-items: center
+	}
+
+	&__cta {
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		position: relative
+		border: 1px solid #E31E2C
+		font-size: 18px
+		line-height: 40px
+		text-align: center
+		height: 40px
+		width: 166px
+		color: #e31e2c
+		cursor: pointer
+		margin-right: 22px
+		background: none
+		z-index: 0
+
+		&::after {
+			content: ''
+			position: absolute
+			width: 100%
+			height: 0
+			top: 0
+			left: 0
+			background: #E31E2C
+			transition: all 0.3s
+			z-index: -1
+		}
+
+		&:hover {
+			color: #fff
+			&::after {
+				height: 100%
+			}
+		}
+	}
+
+	&__contact-number {
+		margin-left: auto
+		margin-right: 55px
+		font-size: 14px
+		font-weight: 300
+		color: #fff
+		transition: 500ms
+
+		&:hover {
+			color: #E31E2C
+		}
+	}
+
+	&__language {
+		position: relative
+		color: #fff
+		width: 68px
+		height: 39px
+		line-height: 39px
+		font-size: 12px
+		font-weight: 300
+		text-align: center
+		cursor: pointer
+		border: 1px solid transparent
+		transition: all .3s
+		&::after {
+			content: ''
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translate(-100%, -50%)
+			width: 0
+			height: 0
+			border-left: 4px solid transparent
+			border-right: 4px solid transparent
+			border-top: 4px solid #fff
+			transition: all .3s
+		}
+
+		&.is-active {
+			border: 1px solid #242728
+
+			&::after {
+				transform: translate(-100%, -50%) rotate(180deg)
+			}
+		}
+
+	}
+
+	&__language-dropdown {
+		display: flex
+		flex-direction: column
+		position: absolute
+		border: 1px solid #242728
+		font-size: 12px
+		font-weight: 300
+		text-align: center
+		padding: 11px 20px
+		width: 68px
+		top: 38px
+		left: -1px
+		opacity: 0
+		pointer-events: none
+		transform: translate3d(0%, 20px, 0)
+		transition: all 0.25s ease-in-out
+		z-index: 20
+
+		&.is-active {
+			opacity: 1
+			pointer-events: all
+			transform: translate3d(0%, 0, 0)
+		}
+	}
+
+	&__dropdown-item {
+		transition: all .3s
+		&:hover {
+			color: #E31E2C
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 17px
+		}
+
+	}
+
+	&__menu {
+		display: flex
+		flex-wrap: wrap
+		margin-left: 126px
+		font-size: 14px
+	}
+
+	&__menu-item {
+		color: #888888
+		margin-right: 40px
+		cursor: pointer
+		&:hover {
+			color: #E31E2C
+			transition: color 500ms
+		}
+	}
+
+	&__hamburger {
+		display: none
+		position: fixed
+		top: 0
+		right: 0
+		justify-content: center
+		align-items: center
+		margin-left: auto
+		color: #d8d8d8
+		width: 54px
+		height: 50px
+		background-color: #000
+
+		.hamburger {
+			padding: 0
+			margin: 0 auto
+		}
+
+		.hamburger-inner {
+			height: 2px
+			width: 24px
+			background-color: #d8d8d8
+			border-radius: 0
+
+			&::before, &::after {
+				height: 2px
+				width: 24px
+				background-color: #d8d8d8
+				border-radius: 0
+			}
+		}
+	}
+}
+
+.mobile-navi {
+	flex: 0 0 auto
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	position: fixed
+	pointer-events: none
+	background: transparent
+	z-index: 100
+	&::before {
+		display: inline-block
+		content: " "
+		position: absolute
+		right: -100px
+		top: -100px
+		z-index: 1
+		width: 100px
+		height: 100px
+		background: #111111
+		transition: .5s ease-in-out, transform .25s ease-in-out
+	}
+
+	&.is-active {
+		opacity: 1
+		pointer-events: all
+		transform: translate3d(0, 0, 0)
+		& .mobile-navi__wrapper {
+			transform: translateZ(0)
+			opacity: 1
+		}
+
+		&::before {
+			width: calc(100vw + 100px)
+			height: calc(100vh + 100px)
+			transform: scale(2)
+		}
+	}
+
+	&__wrapper {
+		height: 100vh
+		padding: 15px 16px 0 16px
+		position: relative
+		opacity: 0
+		transition: all .5s
+		transform: translate3d(0, 100vh, 0)
+		z-index: 99
+	}
+
+	&__change-language {
+		display: flex
+		align-items: center
+		padding-top: 22px;
+
+		.ico {
+			fill: #52575a
+			font-size: 24px
+		}
+
+	}
+
+	&__change-language-title {
+		font-size: 16px
+		font-weight: 500
+		color: #52575a
+		margin-left: 12px
+	}
+
+	&__menu {
+		display: flex
+		flex-direction: column
+		color: #fff
+		font-size: 20px
+		font-weight: 500
+		line-height: 3
+		letter-spacing: 1px
+		margin-top: 65px
+		a {
+			transition: all 500ms
+			&:hover {
+				color: #E31E2C
+			}
+
+		}
+
+	}
+
+	&__cta {
+		position: relative
+		width: 290px
+		height: 50px
+		border: solid 1px #e31e2c
+		font-size: 18px
+		font-weight: 500
+		letter-spacing: 0.9px
+		text-align: center
+		line-height: 50px
+		color: #e31e2c
+		margin-top: 99px
+		margin-left: auto
+		margin-right: auto
+		cursor: pointer
+		&::after {
+			content: ''
+			position: absolute
+			width: 100%
+			height: 0
+			top: 0
+			left: 0
+			background: #E31E2C
+			transition: all 0.3s
+			z-index: -1
+		}
+
+		&:hover {
+			color: #fff
+
+			&::after {
+				height: 100%
+			}
+		}
+	}
+
+	&__call {
+		display: flex
+		justify-content: center
+		font-size: 16px
+		line-height: 1.88
+		text-align: center
+		color: #ffffff
+		text-decoration: underline
+		margin-top: 20px
+	}
+}
+
++r(desktop) {
+	.header {
+		&__menu-item {
+			margin-right: 15px
+		}
+	}
+}
+
++r(tablet) {
+	.header {
+		height: 90px
+
+		&.is-fixed {
+			background: transparent
+			padding: 0
+
+			.header__logo {
+				opacity: 0
+			}
+		}
+
+		&__menu {
+			display: none;
+		}
+
+		&__contact-number {
+			display: none;
+		}
+
+		&__cta {
+			display: none;
+		}
+
+		&__language {
+			display: none;
+		}
+
+		&__hamburger {
+			display: flex
+		}
+	}
+}
+
++r(mobile) {
+	.header {
+		transform: translate(0, -6px)
+
+		&__cta {
+			margin-right: 20px
+		}
+	}
+
+}
+
++r(mobile-s) {
+	.header {
+		&__logo {
+			margin-right: 16px
+
+		}
+		&__cta {
+			width: 165px
+
+		}
+	}
+}

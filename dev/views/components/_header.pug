@@ -1,0 +1,61 @@
+// HEADER :: START
+include ../shared/_mixins
+include ../components/modal/_submit
+
+header.header
+  .container
+    .header__wrapper
+      a.header__logo(href='./homepage.html')
+        img(src='./img/logo.png')
+      ul.header__menu
+        - var list = [{title: 'О брендe', id: '#about'}, {title: 'Производство', id: '#farm'}, {title: 'Каталог', id: '/catalog.html'}, {title: 'Контакты', id: '#contacts'}]
+          each item in list
+            a.header__menu-item(href=item.id)= item.title
+      a.header__contact-number(href="tel:3-8044-333-4195")
+        | +38 044 333-41-95
+      a.header__cta.open-popup-link(data-mfp-src="#test-popup")
+        | Заказать
+      .header__language
+        | RU
+        .header__language-dropdown
+          a(href="#UA").header__dropdown-item UA
+          a(href="#EN").header__dropdown-item EN
+      .header__hamburger
+        .hamburger.hamburger--squeeze(js-hamburger-menu)
+          span.hamburger-box
+            span.hamburger-inner
+
+.mobile-navi
+  .mobile-navi__wrapper
+    .mobile-navi__change-language
+      svg(width='18px', height='18px', viewbox='0 0 18 18', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+        title Group 3
+        desc Created with Sketch.
+        defs
+        g#Bootstrap-4-Grid-System(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+          g#Mobile-Menu-(transform='translate(-16.000000, -17.000000)', stroke='#52575A', stroke-width='1.80000007')
+            g#Group-3(transform='translate(17.000000, 18.000000)')
+              circle#Oval(cx='8', cy='8', r='8')
+              ellipse#Oval(cx='8.2', cy='8', rx='3.2', ry='8')
+              path#Path-13-Copy(d='M1.06666667,11.1333333 L16,11.1333333')
+              path#Path-13(d='M1.06666667,4.8 L16,4.8')
+      span.mobile-navi__change-language-title РУС
+
+    ul.mobile-navi__menu(data-teleport-target='mobile-menu')
+      li
+        a(href='#about') О бренде
+      li
+        a(href='#produce') Производство
+      li
+        a(href='/catalog') Каталог
+      li
+        a(href='#contacts') Контакты
+    .mobile-navi__cta.open-popup-link(data-mfp-src="#test-popup")
+      | Заказать
+    a(href="tel:3-8044-333-4195").mobile-navi__call
+      | +38 044 333-41-95
+
++modal()
+
+
+// HEADER :: END

@@ -1,0 +1,33 @@
+{
+	"sitename": "Skott Smeatasd",
+	"basedir": "./dev/views/",
+	"root": "/",
+	"analyticsCode": "UA-XXXXX-X",
+	"pages": {
+		"home": {
+			"title": "Homepage",
+			"description": "test",
+			"keywords": "test"
+		},
+		"not-found": {
+			"title": "Not found",
+			"description": "test",
+			"keywords": "test"
+		},
+		"catalog": {
+			"title": "Catalog",
+			"description": "test",
+			"keywords": "test"
+		},
+		"listpages": {
+			"title": "Listpages",
+			"description": "test",
+			"keywords": "test"
+		},
+		"index": {
+			"title": "Index",
+			"description": "test",
+			"keywords": "test"
+		}
+	}
+}
