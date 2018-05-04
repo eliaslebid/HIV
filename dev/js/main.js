@@ -5,6 +5,7 @@ import forms from './modules/forms';
 import initMap from './modules/maps';
 import formValidate from './modules/validate';
 import pagination from './modules/pagination';
+import select from './modules/select';
 
 pagination();
 
@@ -18,4 +19,6 @@ forms();
 
 initMap();
 
-formValidate();
+// formValidate();
+
+select();

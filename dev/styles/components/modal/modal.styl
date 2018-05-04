@@ -1,0 +1,159 @@
+.mfp-container {
+	padding: 0!important;
+}
+
+.swal2-shown {
+	.swal2-success-circular-line-left {
+		background-color: #1475f0!important;
+	}
+	.swal2-success-circular-line-right {
+		background-color: #1475f0!important;
+	}
+	.swal2-success-fix {
+		background-color: #1475f0!important;
+	}
+	.swal2-header {
+		background-color: #1475f0;
+	}
+	.swal2-success-line-tip {
+		background-color: #65A9FF!important;
+	}
+	.swal2-success-line-long {
+		background-color: #65A9FF!important;
+	}
+	.swal2-icon.swal2-success {
+		background-color: #65A9FF!important;
+	}
+
+	//.swal2-success-ring {
+	//	width: 36px!important;
+	//	height: 36px!important;
+	//}
+
+	.swal2-icon.swal2-success {
+		background-color: #65A9FF!important;
+	}
+
+	.swal2-container {
+		padding 0;
+
+		.swal2-popup {
+			padding: 0;
+		}
+	}
+
+	.swal2-icon.swal2-success .swal2-success-ring {
+		border: 0.25em solid #65A9FF;
+	}
+}
+
+.modal {
+	display: flex;
+	flex-direction column;
+	height: 100%;
+
+	&__link {
+		color: #1475f0;
+		text-decoration: underline;
+	}
+
+	&__top {
+		background-color: #1475F0;
+		text-align: center;
+		padding: 55px 15px 39px 15px;
+	}
+
+	&__success-text {
+		font-size: 26px;
+		font-weight: 700;
+		color: #FFFFFF;
+		letter-spacing: 0;
+		text-align: center;
+		line-height: 32px;
+	}
+
+	&__additional-inf-wrapper {
+		display: flex;
+		flex-direction column;
+	}
+
+	&__id-number-text {
+		font-size: 14px;
+		font-weight: 300;
+		color: #FFFFFF;
+		letter-spacing: 0;
+		line-height: 21px;
+		margin-top: 48px;
+	}
+
+	&__id {
+		font-weight: 700;
+		font-size: 20px;
+		color: #FFFFFF;
+		letter-spacing: 0;
+		line-height: 21px;
+		margin-top: 18px;
+	}
+
+	&__cta {
+		display: flex;
+		justify-content center;
+		align-items: center;
+		height: 60px;
+		width: 290px;
+		border: 2px solid #1475F0;
+		border-radius: 8px;
+		font-family: MuseoSansCyrl-700;
+		font-size: 24px;
+		color: #1475F0;
+		letter-spacing: 0.29px;
+		margin-top: 40px;
+	}
+
+	&__middle {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		flex: 1 0 auto;
+		font-size: 14px;
+		font-weight: 300;
+		color: #000000;
+		letter-spacing: 0;
+		line-height: 21px;
+		background-color: #fff;
+		padding: 63px 15px 106px 15px;
+		cursor: pointer;
+	}
+
+	&__close {
+		position: absolute;
+		width: 32px;
+		height: 32px;
+		opacity: 1;
+
+		&.mfp-close {
+			opacity: 1;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+		&:before, &:after {
+			position: absolute;
+			content: ' ';
+			height: 15px;
+			width: 2px;
+			background-color: #fff;
+			top: 12px;
+			right: 12px;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+		}
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+}

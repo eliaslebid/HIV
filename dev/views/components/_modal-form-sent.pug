@@ -1,0 +1,31 @@
+mixin sent-modal()
+	.modal.mfp-hide#test-popup
+		.modal__top
+			.modal__icon
+				svg(width='36px', height='36px', viewbox='0 0 36 36', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+					g#Design(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+						g(id='ЗАКАЗ-ОТПРАВЛЕН-Copy-7', transform='translate(-142.000000, -54.000000)', fill='#65A9FF', fill-rule='nonzero')
+							g#Group-2(transform='translate(142.000000, 54.000000)')
+								g#done
+									polygon#Shape(points='15.0416667 21.3983051 9.75 16.0169492 8 17.7966102 15.0416667 25 28 11.8220339 26.25 10')
+									path#Shape(d='M18,0 C8.07906977,0 0,8.07906977 0,18 C0,27.9209302 8.07906977,36 18,36 C27.9209302,36 36,27.9209302 36,18 C36,8.07906977 27.9209302,0 18,0 Z M18,33.4883721 C9.46046512,33.4883721 2.51162791,26.5395349 2.51162791,18 C2.51162791,9.46046512 9.46046512,2.51162791 18,2.51162791 C26.5395349,2.51162791 33.4883721,9.46046512 33.4883721,18 C33.4883721,26.5395349 26.5395349,33.4883721 18,33.4883721 Z')
+			.modal__success-text
+				| Заказ успешно
+				br
+				| оформлен
+			.modal__additional-inf-wrapper
+				p.modal__id-number-text
+					| Идентификационный номер вашего заказа:
+				.modal__id
+					| 34578230756397
+		.modal__middle
+			.modal__hint
+				| Вы можете скопировать его или сделать скриншот чтобы отследить вашу посылку на сайте&nbsp
+				a.modal__link(href="https://www.ukr.net/") Укрпочта
+				br
+				br
+				| Предварительно "Укрпочта" уведомит Вас о поступлении посылки извещением на указанный Вами телефон.
+			a(href="/").modal__cta
+				| На главную
+		button.mfp-close.modal__close#close-btn
+		include ../components/_footer

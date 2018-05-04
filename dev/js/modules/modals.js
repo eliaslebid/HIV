@@ -1,12 +1,13 @@
 import $ from 'jquery';
+// import Swal from 'sweetalert2'
 import 'magnific-popup';
 import 'magnific-popup/dist/magnific-popup.css';
 
 export default function modals() {
-	function initPopups(){
-		// Magnific Popup
-		var startWindowScroll = 0;
-		$('[js-popup]').magnificPopup({
+	// Magnific Popup
+
+	$(document).ready(function() {
+		$('.form .open-popup-link').magnificPopup({
 			type: 'inline',
 			fixedContentPos: true,
 			fixedBgPos: true,
@@ -17,34 +18,40 @@ export default function modals() {
 			removalDelay: 300,
 			mainClass: 'popup-buble',
 			callbacks: {
-				beforeOpen: function() {
-					startWindowScroll = _window.scrollTop();
-					// $('html').addClass('mfp-helper');
-				},
-				close: function() {
-					// $('html').removeClass('mfp-helper');
-					_window.scrollTop(startWindowScroll);
+				open: function () {
+					$('#close-btn').on('click', function (event) {
+						event.preventDefault();
+						$.magnificPopup.close();
+					});
 				}
 			}
 		});
 
-		$('[js-popup-gallery]').magnificPopup({
-			delegate: 'a',
-			type: 'image',
-			tLoading: 'Загрузка #%curr%...',
-			mainClass: 'popup-buble',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true,
-				preload: [0,1]
-			},
-			image: {
-				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-			}
-		});
-	}
+		function closeMfp(){
+			$.magnificPopup.close();
+		}
+	});
 
-	function closeMfp(){
-		$.magnificPopup.close();
-	}
+
+	// const htmlContent = `
+	// 	<div class="modal">
+	// 		<div class="modal__top">
+	// 			<div class="modal__success-text">Заказ успешно<br>оформлен</div>
+	// 			<div class="modal__additional-inf-wrapper">
+	// 				<p class="modal__id-number-text">Идентификационный номер вашего заказа:</p>
+	// 				<div class="modal__id">34578230756397</div>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// `;
+    //
+	// $('.form__cta').on('click', function () {
+	// 	Swal({
+	// 		type: 'success',
+	// 		title: '',
+	// 		html: htmlContent,
+	// 		showConfirmButton: true,
+	// 		timer: 231500
+	// 	})
+	// });
 }

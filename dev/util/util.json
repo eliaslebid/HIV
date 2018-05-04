@@ -16,6 +16,12 @@
 			"description": "test",
 			"keywords": "test"
 		},
+		"sent-form": {
+			"name": "form",
+			"title": "Not found",
+			"description": "test",
+			"keywords": "test"
+		},
 		"not-found": {
 			"name": "homepage",
 			"title": "Not found",
