@@ -16,4 +16,9 @@ export default function select() {
 		create: false,
 		sortField: 'text'
 	});
+
+	$('#js-status-select').selectize({
+		create: false,
+		sortField: 'text'
+	});
 }

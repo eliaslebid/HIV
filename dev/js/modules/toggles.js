@@ -14,27 +14,6 @@ export default function toggles() {
 			return false;
 		});
 
-	// $(window).on('scroll', throttle(function () {
-	// 	let vScroll = $(window).scrollTop();
-	// 	let header = $('.header').not('.header--static');
-	// 	let headerHeight = header.height();
-	// 	let firstSection = $(document).find('.page__content div:first-child').height() - headerHeight;
-	// 	let visibleWhen = Math.round($(document).height() / $(window).height()) > 2.5;
-    //
-	// 	if (visibleWhen) {
-	// 		if (vScroll > headerHeight) {
-	// 			header.addClass('is-fixed');
-	// 		} else {
-	// 			header.removeClass('is-fixed');
-	// 		}
-	// 		if (vScroll > firstSection) {
-	// 			header.addClass('is-fixed-visible');
-	// 		} else {
-	// 			header.removeClass('is-fixed-visible');
-	// 		}
-	// 	}
-	// }, 10));
-
 	$(document).on('click', '.hamburger--squeeze', function () {
 		$('html, body').toggleClass('overflow--hidden');
 		$(this).toggleClass('is-active');
@@ -64,6 +43,7 @@ export default function toggles() {
 	});
 
 	$('.accordion__title').on('click', function () {
+		$(this).toggleClass('active');
 		$(this).next().slideToggle();
 	})
 }

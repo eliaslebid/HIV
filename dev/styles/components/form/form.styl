@@ -2,7 +2,7 @@
 	padding-top: 15px;
 
 	&__top {
-		margin-top 85px;
+		margin-top: 70px;
 	}
 
 	&__title {
@@ -11,6 +11,7 @@
 		color: #383838;
 		letter-spacing: 0;
 		line-height: 41px;
+		white-space: nowrap;
 
 		&--margin-top-50 {
 			margin-top 50px;
@@ -27,6 +28,7 @@
 		color: #383838;
 		letter-spacing: 0;
 		line-height: 26px;
+		margin-top: 19px;
 	}
 
 	&__hint {
@@ -75,6 +77,53 @@
 			label {
 				margin-bottom 0;
 				margin-left 13px;
+			}
+		}
+
+		&--radio {
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			cursor: pointer;
+
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+
+				&:checked ~ .checkmark {
+					background-color: #2196F3;
+				}
+
+				&:checked ~ .checkmark:after {
+					display: block;
+				}
+			}
+
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 22px;
+				width: 22px;
+				background-color: #eee;
+				border-radius: 50%;
+				transition: all .3s;
+
+				&:after {
+					content: "";
+					position: absolute;
+					display: none;
+				}
+
+				&:after {
+					top: 6px;
+					left: 6px;
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background: white;
+				}
 			}
 		}
 
@@ -232,7 +281,6 @@ body {
 	}
 
 	.select2-results__option {
-		/* Киевская: */
 		font-size: 16px;
 		font-weight 300;
 		color: #000000;

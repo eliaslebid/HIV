@@ -17,19 +17,16 @@ html(lang="en")
 		block styles
 			include _styles
 
-	body
+	body(class="" + htmlWebpackPlugin.options.data.pages[page].name)
 		// place where pjax bindings happen's
 		#barba-wrapper
 			block header
-				include ../components/_header
+				include ../components/_a-header
 
 			// what should be changed with every pjax
-			.page(class="" + htmlWebpackPlugin.options.data.pages[page].name)
+			.page
 				.page__content#fullpage
 					block content
-
-				block footer
-					include ../components/_footer
 
 			block scripts
 				include _scripts

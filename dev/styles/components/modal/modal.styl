@@ -52,6 +52,16 @@
 	flex-direction column;
 	height: 100%;
 
+	.modal-dialog {
+		margin: 0;
+		max-width: 100%!important;
+		width: 100%;
+
+		footer {
+			height: 100%;
+		}
+	}
+
 	&__link {
 		color: #1475f0;
 		text-decoration: underline;
@@ -63,6 +73,12 @@
 		padding: 55px 15px 39px 15px;
 	}
 
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
 	&__success-text {
 		font-size: 26px;
 		font-weight: 700;
@@ -70,6 +86,10 @@
 		letter-spacing: 0;
 		text-align: center;
 		line-height: 32px;
+	}
+
+	&__form-success-text {
+		margin-top: 28px;
 	}
 
 	&__additional-inf-wrapper {
@@ -110,6 +130,28 @@
 		margin-top: 40px;
 	}
 
+	&__form-middle {
+		display: flex;
+		margin: 0 auto;
+		width: 263px;
+		height: 44px;
+		margin-top: 71px;
+	}
+
+	&__form-cta {
+		flex: 1;
+		background: #1475F0;
+		box-shadow: 0 8px 24px 0 rgba(41,109,207,0.44);
+		border-radius: 8px;
+		font-size: 18px;
+		color: #FFFFFF;
+		letter-spacing: 0.22px;
+		text-align: center;
+		line-height: 41px;
+		cursor: pointer;
+		pointer-events: all;
+	}
+
 	&__middle {
 		display: flex;
 		align-items: center;
@@ -127,9 +169,14 @@
 
 	&__close {
 		position: absolute;
+		top: 0;
+		right: 0;
 		width: 32px;
 		height: 32px;
+		background-color: transparent;
 		opacity: 1;
+		pointer-events: all;
+		cursor: pointer;
 
 		&.mfp-close {
 			opacity: 1;

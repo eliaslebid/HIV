@@ -76,18 +76,18 @@ const common = merge([
 			}),
 			new webpack.ProgressPlugin(),
 			new webpack.HotModuleReplacementPlugin(),
-			// new BrowserSyncPlugin({
-			// 	host: 'localhost',
-			// 	port: 3000,
-			// 	server: {
-			// 		baseDir: ['dist']
-			// 	},
-			// 	files: [
-			// 		'dist/css/*.css',
-			// 		'dist/*.html'
-            //
-			// 	]
-			// })
+			new BrowserSyncPlugin({
+				host: 'localhost',
+				port: 3000,
+				server: {
+					baseDir: ['dist']
+				},
+				files: [
+					'dist/css/*.css',
+					'dist/*.html'
+
+				]
+			})
 		]
 	},
 	pug(),

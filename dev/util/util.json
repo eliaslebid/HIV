@@ -16,8 +16,14 @@
 			"description": "test",
 			"keywords": "test"
 		},
-		"sent-form": {
-			"name": "form",
+		"admin-auth": {
+			"name": "admin-auth",
+			"title": "Not found",
+			"description": "test",
+			"keywords": "test"
+		},
+		"admin": {
+			"name": "admin",
 			"title": "Not found",
 			"description": "test",
 			"keywords": "test"
