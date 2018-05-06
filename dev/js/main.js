@@ -10,6 +10,7 @@ import formValidate from './modules/validate';
 import pagination from './modules/pagination';
 import select from './modules/select';
 import datePicker from './modules/datepicker';
+import modal from './modules/modals';
 
 
 pagination();
@@ -27,3 +28,5 @@ initMap();
 select();
 
 datePicker();
+
+modal();

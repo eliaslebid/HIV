@@ -34,11 +34,11 @@ block content
 					input(type="tel" name="phone	" js-validate = '')
 				.p.form__title.form__title--margin-top-50
 					| Способ доставки
-				div.form__field.form__field--row.form__field--radio
+				label.form__field.form__field--row.form__field--radio
 					input(type="radio" id="byPostOffice" name="delivery" js-validate = '').form__radio
 					span.checkmark
 					label(for="byPostOffice").form__label-title В почтовое отделение (27 грн)
-				div.form__field.form__field--row.form__field--radio
+				label.form__field.form__field--row.form__field--radio
 					input(type="radio" id="byDelivery" name="delivery" js-validate = '').form__radio
 					span.checkmark
 					label(for="byDelivery").form__label-title По адресу (36 грн)
@@ -80,6 +80,6 @@ block content
 				div.form__field
 					label.form__label-title Почтовый индекс
 					input(type="text" name="postcode" js-validate = '')
-				.form__cta(data-toggle="modal" data-target="#exampleModal")
+				.form__cta(data-toggle="modal" data-target="#modalFormSent" data-backdrop="static" data-keyboard="false")
 					| Оформить заказ
 	+sent-modal()

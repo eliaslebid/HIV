@@ -1,5 +1,5 @@
 mixin sent-modal()
-	#exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='sendFormModal', aria-hidden='true')
+	#modalFormSent.modal.fade(tabindex='-1', role='dialog', aria-labelledby='sendFormModal', aria-hidden='true', data-backdrop="static", data-keyboard="false")
 		.modal-dialog(role='document')
 			.modal__top
 				.modal__icon
@@ -28,7 +28,7 @@ mixin sent-modal()
 					| Предварительно "Укрпочта" уведомит Вас о поступлении посылки извещением на указанный Вами телефон.
 				a(href="/").modal__cta
 					| На главную
-			button.mfp-close.modal__close(data-dismiss="modal")
+			button.modal__close(data-dismiss="modal")
 			include ../components/_footer
 
 

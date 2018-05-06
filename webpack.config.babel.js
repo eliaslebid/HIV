@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const glob = require('glob');
 const merge = require('webpack-merge');
@@ -66,28 +66,28 @@ const common = merge([
 					}
 				}
 			}),
-			new CopyWebpackPlugin([{
-				from: PATHS.source + '/util/style.json',
-				to: './util/'
-			}]),
+			// new CopyWebpackPlugin([{
+			// 	from: PATHS.source + '/util/style.json',
+			// 	to: './util/'
+			// }]),
 			new webpack.ProvidePlugin({
 				$: 'jquery',
 				jQuery: 'jquery'
 			}),
 			new webpack.ProgressPlugin(),
 			new webpack.HotModuleReplacementPlugin(),
-			new BrowserSyncPlugin({
-				host: 'localhost',
-				port: 3000,
-				server: {
-					baseDir: ['dist']
-				},
-				files: [
-					'dist/css/*.css',
-					'dist/*.html'
-
-				]
-			})
+			// new BrowserSyncPlugin({
+			// 	host: 'localhost',
+			// 	port: 3000,
+			// 	server: {
+			// 		baseDir: ['dist']
+			// 	},
+			// 	files: [
+			// 		'dist/css/*.css',
+			// 		'dist/*.html'
+            //
+			// 	]
+			// })
 		]
 	},
 	pug(),
@@ -107,7 +107,8 @@ module.exports = function (env) {
 			common,
 			devserver(),
 			stylus(),
-			css()
+			css(),
+			fonts()
 		]);
 	}
 };

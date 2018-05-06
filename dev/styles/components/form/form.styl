@@ -85,6 +85,11 @@
 			padding-left: 35px;
 			margin-bottom: 12px;
 			cursor: pointer;
+			user-select: none;
+
+			&:hover input ~ .checkmark {
+				background-color: #ccc;
+			}
 
 			input {
 				position: absolute;
@@ -164,10 +169,15 @@
 			border: 1px solid #bfcce1;
 			border-radius: 8px;
 			padding-left: 14px;
+			padding-right: 25px;
 			transition: all 0.3s;
 			caret-color: #1475f0;
 			background-image: none;
 			background-color: transparent;
+
+			input {
+				width: 100%!important;
+			}
 
 			&::after {
 				border-style: solid;
@@ -175,7 +185,7 @@
 				content: '';
 				display: inline-block;
 				height: 0.45em;
-				transform: rotate(-45deg);
+				transform: rotate(135deg);
 				vertical-align: top;
 				width: 0.45em;
 				border-color: #bfcce1;
@@ -190,7 +200,7 @@
 					content: '';
 					display: inline-block;
 					height: 0.45em;
-					transform: rotate(135deg);
+					transform: rotate(-45deg);
 					vertical-align: top;
 					width: 0.45em;
 					border-color: #bfcce1;
@@ -251,10 +261,12 @@
 		letter-spacing: 0;
 		line-height: 26px;
 		margin-bottom 3px;
+		cursor: pointer;
 	}
 
 	&__cta {
 		send-button()
+		padding: 7px 44px 12px 44px;
 
 		&--disabled {
 			background: #E8E8E8;

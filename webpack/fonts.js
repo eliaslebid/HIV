@@ -3,7 +3,7 @@ module.exports = function() {
 		module: {
 			rules: [
 				{
-					test: /\.(ttf|eot|woff|woff2)$/,
+					test: /\.(ttf|eot|woff|woff2|svg)$/,
 					loader: 'file-loader',
 					exclude: [
 						/node_modules/

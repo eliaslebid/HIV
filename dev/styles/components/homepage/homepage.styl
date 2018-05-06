@@ -64,9 +64,25 @@
 			letter-spacing: 0;
 			line-height: 26px;
 
+			&:not(:first-child) {
+				margin-top: 6px;
+			}
+
 			&--highlight {
 				color: #D6333C;
 			}
+		}
+
+		&__enum {
+			margin-top: 12px;
+			list-style-type: circle;
+			padding-left: 20px;
+		}
+
+		&__enum-item {
+			list-style: disc outside none;
+			display: list-item;
+			list-style-type: disc;
 		}
 	}
 
@@ -96,5 +112,6 @@
 
 	&__cta {
 		send-button()
+		padding: 7px 35px 12px 35px;
 	}
 }
