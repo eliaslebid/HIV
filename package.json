@@ -4,7 +4,6 @@
 	"description": "",
 	"scripts": {
 		"dev": "node_modules/.bin/webpack-dev-server --color --env development --hot-only",
-		"external": "webpack --watch --env development",
 		"prod": "node_modules/.bin/webpack --env production"
 	},
 	"author": "Elias",
