@@ -9,7 +9,7 @@ block content
 	.container
 		.form__top
 			.form__help
-				.form__title Как заказать доставку
+				.form__title.form__title--enhance Как заказать доставку
 				.form__description
 					| Для того, чтобы заказть тест выберите удобный способ доставки
 					| и заполните соответствующие поля. Сроки доставки посылки 1-3 дней от даты отправки.
@@ -32,16 +32,16 @@ block content
 				div.form__field
 					label.form__label-title Номер телефона
 					input(type="tel" name="phone	" js-validate = '')
-				.p.form__title.form__title--margin-top-50
+				.p.form__title.form__title--mt-78
 					| Способ доставки
 				label.form__field.form__field--row.form__field--radio
 					input(type="radio" id="byPostOffice" name="delivery" js-validate = '').form__radio
 					span.checkmark
-					label(for="byPostOffice").form__label-title В почтовое отделение (27 грн)
+					label(for="byPostOffice").form__label-title.form__label-title--radio В почтовое отделение (27 грн)
 				label.form__field.form__field--row.form__field--radio
 					input(type="radio" id="byDelivery" name="delivery" js-validate = '').form__radio
 					span.checkmark
-					label(for="byDelivery").form__label-title По адресу (36 грн)
+					label(for="byDelivery").form__label-title.form__label-title--radio По адресу (36 грн)
 				.p.form__title.form__title--margin-top-80
 					| Адрес получателя
 				div.form__field

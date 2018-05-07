@@ -3,16 +3,27 @@ module.exports = function() {
 		module: {
 			rules: [
 				{
-					test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
-					loader: 'file-loader',
-					exclude: [
-						/fonts/
-					],
-					options: {
-						publicPath: './',
-						name: '[name].[ext]',
-						outputPath: './img/'
-					}
+					test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+					use: [
+						{
+							loader: 'url-loader',
+							options: {
+								limit: 10000,
+								mimetype: 'image/svg+xml'
+							}
+						}
+					]
+				},
+				{
+					test: /\.(jpe?g|png|gif|ico)$/i,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								name: '[name].[ext]'
+							}
+						}
+					]
 				}
 			]
 		}

@@ -43,6 +43,7 @@ const common = merge([
 		},
 		output: {
 			path: PATHS.build,
+			publicPath: '/',
 			filename: 'js/[name].js'
 		},
 		plugins: [
@@ -66,10 +67,6 @@ const common = merge([
 					}
 				}
 			}),
-			// new CopyWebpackPlugin([{
-			// 	from: PATHS.source + '/util/style.json',
-			// 	to: './util/'
-			// }]),
 			new webpack.ProvidePlugin({
 				$: 'jquery',
 				jQuery: 'jquery'
@@ -99,7 +96,8 @@ module.exports = function (env) {
 	if (env === 'production') {
 		return merge([
 			common,
-			extractCSS()
+			extractCSS(),
+			fonts()
 		]);
 	}
 	if (env === 'development') {

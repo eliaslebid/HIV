@@ -1,5 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.styl';
 import './js/main';
+
 
 function importAll(r) {
 	return r.keys().map(r);

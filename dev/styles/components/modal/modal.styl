@@ -48,9 +48,15 @@
 }
 
 .modal {
-	display: flex;
-	flex-direction column;
-	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	overflow: hidden;
+	outline: 0;
 
 	.modal-dialog {
 		margin: 0;
@@ -60,7 +66,6 @@
 
 	&__wrapper {
 		display: flex;
-		min-height: 100vh;
 	}
 
 	&__link {
@@ -210,6 +215,15 @@
 			transform: rotate(-45deg);
 		}
 	}
+}
+
+.fade {
+	transition: opacity .15s linear;
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .admin {
