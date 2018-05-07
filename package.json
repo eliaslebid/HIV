@@ -113,6 +113,7 @@
 		"express": "^4.16.3",
 		"find-cache-dir": "^1.0.0",
 		"flatpickr": "^4.4.6",
+		"gulp": "^3.9.1",
 		"html-webpack-pug-plugin": "^0.3.0",
 		"i": "^0.3.6",
 		"icheck": "^1.0.2",
